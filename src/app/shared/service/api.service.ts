@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Game } from '../model/game.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,5 +12,9 @@ export class ApiService {
 
   ping() {
     return this.http.get<{ping: string, ack: string}>(`${this.apiUrl}/ping`);
+  }
+
+  getGames() {
+    return this.http.get<Game[]>(`${this.apiUrl}/games`);
   }
 }
