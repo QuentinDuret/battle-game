@@ -1,0 +1,158 @@
+.arcade-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(255, 0, 255, 0.1) 0px, /* Magenta */
+      rgba(255, 0, 255, 0.1) 5px,
+      transparent 5px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 255, 255, 0.1) 0px, /* Cyan */
+      rgba(0, 255, 255, 0.1) 5px,
+      transparent 5px,
+      transparent 10px
+    );
+  animation: neon-grid 5s linear infinite;
+  z-index: -1;
+}
+
+@keyframes neon-grid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 10px 10px;
+  }
+}
+
+.arcade-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arcade-scoreboard {
+  width: 70%;
+  padding: 30px;
+  margin-top: 50px;
+  border: 5px solid #810a81; /* Magenta */
+  box-shadow: 0 0 20px #810a81, 0 0 60px #810a81; /* Magenta glow */
+  background-color: #000000;
+  border-radius: 10px;
+  animation: fade-in 2s ease-in-out;
+}
+
+.arcade-title {
+  font-size: 2rem;
+  color: #FF00FF; /* Magenta */
+  text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF; /* Magenta glow */
+  margin-bottom: 20px;
+}
+
+.scores-list {
+  list-style: none;
+  padding: 0;
+}
+
+.score-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 2px dashed #FFFF00; /* Jaune dashed line */
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.score-item:last-child {
+  border-bottom: none;
+}
+
+.player-name {
+  color: #00FFFF; /* Cyan */
+  text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF; /* Cyan glow */
+  animation: blink 1s infinite;
+}
+
+.player-score {
+  color: #FFFF00; /* Jaune */
+  text-shadow: 0 0 5px #FFFF00, 0 0 10px #FFFF00; /* Jaune glow */
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.scores-list {
+  overflow: hidden;
+  height: 200px;
+  position: relative;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.score-item {
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.arcade-new-game {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.arcade-button {
+  font-family: "Press Start 2P", sans-serif;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, #FF00FF, #00FFFF); /* Dégradé magenta et cyan */
+  border: 5px solid #FFFF00; /* Jaune */
+  border-radius: 50%; /* Bouton rond */
+  color: #000000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-shadow: 0 0 5px #FFFF00, 0 0 10px #FFFF00; /* Glow jaune */
+  box-shadow: 0 0 20px #FF00FF, 0 0 40px #00FFFF; /* Glow magenta et cyan */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.arcade-button:hover {
+  transform: scale(1.1); /* Effet de zoom au survol */
+  box-shadow: 0 0 40px #FF00FF, 0 0 60px #00FFFF; /* Glow amplifié */
+}
+
+.arcade-button:active {
+  transform: scale(0.95); /* Légère compression au clic */
+  box-shadow: 0 0 20px #FFFF00, 0 0 30px #FFFF00; /* Glow jaune au clic */
+}

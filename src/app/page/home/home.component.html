@@ -1,8 +1,24 @@
-<h1>Parties précédentes</h1>
+<!-- <h1>Parties précédentes</h1>
 <ul>
   <li *ngFor="let game of gameList">
-    Joueur {{ game.scores[0].playerId }} score : {{ game.scores[0].score }} vs  Joueur {{ game.scores[1].playerId }} score : {{ game.scores[1].score }} 
+    Joueur {{ game.scores[0].playerId }} score : {{ game.scores[0].score }} vs  Joueur {{ game.scores[1].playerId }} score : {{ game.scores[1].score }}
     - Gagnant : {{ game.scores[0].score > game.scores[1].score ? game.scores[0].playerId : ( game.scores[0].score < game.scores[1].score ? game.scores[1].playerId : "Egalité" )  }}
   </li>
 </ul>
-<button routerLink="/game">Nouvelle partie</button>
+<button routerLink="/game">Nouvelle partie</button> -->
+<div class="arcade-background"></div>
+<div class="arcade-content">
+  <div class="arcade-scoreboard">
+    <h1 class="arcade-title">High Scores</h1>
+    <ul class="scores-list">
+      <li class="score-item" *ngFor="let game of gameList">
+        <span class="player-name"> Joueur {{ game.scores[0].playerId }} vs Joueur {{ game.scores[1].playerId }} </span>
+        <span class="player-score"> {{ game.scores[0].score }} - {{ game.scores[1].score }} </span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="arcade-new-game">
+  <button class="arcade-button" (click)="startGame()">New Game</button>
+</div>
