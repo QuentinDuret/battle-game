@@ -6,14 +6,14 @@
   height: 100%;
   background: repeating-linear-gradient(
       0deg,
-      rgba(255, 0, 255, 0.1) 0px, /* Magenta */
+      rgba(255, 0, 255, 0.1) 0px,
       rgba(255, 0, 255, 0.1) 5px,
       transparent 5px,
       transparent 10px
     ),
     repeating-linear-gradient(
       90deg,
-      rgba(0, 255, 255, 0.1) 0px, /* Cyan */
+      rgba(0, 255, 255, 0.1) 0px,
       rgba(0, 255, 255, 0.1) 5px,
       transparent 5px,
       transparent 10px
@@ -41,8 +41,8 @@
   width: 70%;
   padding: 30px;
   margin-top: 50px;
-  border: 5px solid #810a81; /* Magenta */
-  box-shadow: 0 0 20px #810a81, 0 0 60px #810a81; /* Magenta glow */
+  border: 5px solid #810a81; 
+  box-shadow: 0 0 20px #810a81, 0 0 60px #810a81; 
   background-color: #000000;
   border-radius: 10px;
   animation: fade-in 2s ease-in-out;
@@ -50,8 +50,8 @@
 
 .arcade-title {
   font-size: 2rem;
-  color: #FF00FF; /* Magenta */
-  text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF; /* Magenta glow */
+  color: #FF00FF;
+  text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF; 
   margin-bottom: 20px;
 }
 
@@ -64,7 +64,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  border-bottom: 2px dashed #FFFF00; /* Jaune dashed line */
+  border-bottom: 2px dashed #FFFF00; 
   font-size: 1.5rem;
   color: #ffffff;
 }
@@ -74,14 +74,14 @@
 }
 
 .player-name {
-  color: #00FFFF; /* Cyan */
-  text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF; /* Cyan glow */
+  color: #00FFFF;
+  text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF, 0 0 30px #00FFFF; 
   animation: blink 1s infinite;
 }
 
 .player-score {
-  color: #FFFF00; /* Jaune */
-  text-shadow: 0 0 5px #FFFF00, 0 0 10px #FFFF00; /* Jaune glow */
+  color: #FFFF00; 
+  text-shadow: 0 0 5px #FFFF00, 0 0 10px #FFFF00; 
 }
 
 @keyframes blink {
@@ -134,25 +134,25 @@
   font-family: "Press Start 2P", sans-serif;
   width: 150px;
   height: 150px;
-  background: linear-gradient(135deg, #FF00FF, #00FFFF); /* Dégradé magenta et cyan */
-  border: 5px solid #FFFF00; /* Jaune */
-  border-radius: 50%; /* Bouton rond */
+  background: linear-gradient(135deg, #FF00FF, #00FFFF); 
+  border: 5px solid #FFFF00; 
+  border-radius: 50%; 
   color: #000000;
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
-  text-shadow: 0 0 5px #FFFF00, 0 0 10px #FFFF00; /* Glow jaune */
-  box-shadow: 0 0 20px #FF00FF, 0 0 40px #00FFFF; /* Glow magenta et cyan */
+  text-shadow: 0 0 5px #FFFF00, 0 0 10px #FFFF00;
+  box-shadow: 0 0 20px #FF00FF, 0 0 40px #00FFFF; 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .arcade-button:hover {
-  transform: scale(1.1); /* Effet de zoom au survol */
-  box-shadow: 0 0 40px #FF00FF, 0 0 60px #00FFFF; /* Glow amplifié */
+  transform: scale(1.1); 
+  box-shadow: 0 0 40px #FF00FF, 0 0 60px #00FFFF; 
 }
 
 .arcade-button:active {
-  transform: scale(0.95); /* Légère compression au clic */
-  box-shadow: 0 0 20px #FFFF00, 0 0 30px #FFFF00; /* Glow jaune au clic */
+  transform: scale(0.95); 
+  box-shadow: 0 0 20px #FFFF00, 0 0 30px #FFFF00; 
 }
