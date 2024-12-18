@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { GameState } from '../model/game.model';
+import { GameState, PlayerApi } from '../model/game.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,19 +8,9 @@ export class GameService {
 
   constructor() { }
 
-  initializeGame(player1 : {name: string, id: number}, player2: {name: string, id: number}): GameState {
+  initializeGame(player1 : PlayerApi, player2: PlayerApi): GameState {
     const deck = this.shuffleDeck(Array.from({ length: 52 }, (_, i) => i + 1));
     const mid = Math.floor(deck.length / 2);
-  
-    console.log(deck);
-    console.log({
-      players: [
-        { name: player1.name, id: player1.id, deck: deck.slice(0, mid), score: 0 },
-        { name: player2.name, id: player2.id, deck: deck.slice(mid), score: 0 },
-      ],
-      currentTurn: 0,
-      playedCards: [],
-    });
     return {
       players: [
         { name: player1.name, id: player1.id, deck: deck.slice(0, mid), score: 0 },
@@ -61,7 +51,6 @@ export class GameService {
     } else if (card2 > card1) {
       player2.score++;
     }
-    console.log("gameState", gameState);
     gameState.currentTurn++;
     return gameState;
   }

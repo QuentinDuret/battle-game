@@ -1,4 +1,4 @@
-
+$--translate-distance: 100px;
 
 .arcade-content {
   display: flex;
@@ -73,7 +73,7 @@
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-100%);
+    transform: translateY(var(--translate-distance));
   }
 }
 

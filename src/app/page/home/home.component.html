@@ -1,10 +1,11 @@
 <div class="arcade-background"></div>
 <div class="arcade-content">
   <div class="arcade-scoreboard">
-    <h1 class="arcade-title">High Scores</h1>
-    <ul class="scores-list">
-      <li class="score-item" *ngFor="let game of gameList">
-        <span class="player-name"> Joueur {{ game.scores[0].playerId }} vs Joueur {{ game.scores[1].playerId }} </span>
+    <h1 class="arcade-title">Scores</h1>
+    <ul class="scores-list" >
+      <li class="score-item"[ngStyle]="{ 'animation-duration': animationDuration + 's' }" 
+      *ngFor="let game of gameList">
+        <span class="player-name"> {{ getPlayerNameById(game.scores[0].playerId) }} vs {{ getPlayerNameById(game.scores[1].playerId) }} </span>
         <span class="player-score"> {{ game.scores[0].score }} - {{ game.scores[1].score }} </span>
       </li>
     </ul>

@@ -15,6 +15,11 @@ export interface Player {
     score: number; 
 }
 
+export interface PlayerApi {
+    name: string;
+    id: number;
+}
+
 export interface GameState {
     players: Player[];
     currentTurn: number;

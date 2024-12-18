@@ -1,22 +1,53 @@
 <div class="arcade-background"></div>
 
-<div *ngIf="!gameState.winner" class="arcade-game-container">
-
-      <h1 class="arcade-game-title">Tour {{ gameState.currentTurn + 1 }}</h1>
-      <div class="arcade-score">
-        <p>{{ gameState.players[0].name }} : {{ gameState.players[0].score }}</p>
-        <p>{{ gameState.players[1].name }} : {{ gameState.players[1].score }}</p>
+<div *ngIf="!gameStart" class="arcade-game-container">
+    <h1 class="arcade-game-title">Configurer les joueurs</h1>
+    <div class="arcade-new-player">Ajouter un nouveau joueur :</div>
+    <input class="arcade-select" [(ngModel)]="newPlayerName" placeholder="Nom du joueur" />
+    <button class="arcade-button small" (click)="addNewPlayer()">Ajouter</button>
+    <div class="player-config">
+        <div class="player1">
+            <h2>Joueur 1</h2>
+            <select [(ngModel)]="selectedPlayers.player1" (ngModelChange)="availablePlayers()" class="arcade-select">
+                <option *ngFor="let player of players1" [ngValue]="player">{{ player.name }}</option>
+              </select>
+        </div>
+      <div class="player2">
+        <h2>Joueur 2</h2>
+        <select [(ngModel)]="selectedPlayers.player2" (ngModelChange)="availablePlayers()" class="arcade-select">
+          <option *ngFor="let player of players2" [ngValue]="player">{{ player.name }}</option>
+        </select>
       </div>
-      
-      <div *ngIf="gameState.playedCards.length" class="arcade-played-cards">
-        <p>Cartes jouées : {{ gameState.playedCards[0] }} vs {{ gameState.playedCards[1] }}</p>
-      </div>
-      <button class="arcade-button" (click)="playTurn()">Jouer un tour</button>
     </div>
-  
-    <div *ngIf="gameState.winner">
-      <h2 class="arcade-winner">Le gagnant est : {{ gameState.winner }}</h2>
-      <button class="arcade-button" (click)="restartGame()">Rejouer</button>
+    <button class="arcade-button" (click)="startNewGame()" [disabled]="!selectedPlayers.player1 || !selectedPlayers.player2">
+      Démarrer la partie
+    </button>
+</div>
 
+  <div *ngIf="gameStart">
+    <div *ngIf="!gameState.winner" class="arcade-game-container">
+
+        <h1 class="arcade-game-title">Tour {{ gameState.currentTurn + 1 }}</h1>
+        <div class="arcade-score">
+          <p>{{ gameState.players[0].name }} : {{ gameState.players[0].score }}</p>
+          <p>{{ gameState.players[1].name }} : {{ gameState.players[1].score }}</p>
+        </div>
+        
+        <div *ngIf="gameState.playedCards.length" class="arcade-played-cards">
+          <p>Cartes jouées : {{ gameState.playedCards[0] }} vs {{ gameState.playedCards[1] }}</p>
+        </div>
+        <button class="arcade-button" (click)="playTurn()">Jouer un tour</button>
+      </div>
+    
+      <div *ngIf="gameState.winner">
+        <h2 class="arcade-winner">Le gagnant est : {{ gameState.winner }}</h2>
+        <div>
+            <button class="arcade-button" (click)="restartGame()">Rejouer</button>
+        </div>
+        <div>
+            <button class="arcade-button" (click)="goToScores()">Scores</button>
+        </div>
+    </div>
   </div>
+
   

@@ -9,6 +9,12 @@
     font-family: 'Press Start 2P', cursive;
   }
   
+  .arcade-new-player {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
 
   .arcade-game-title {
     font-size: 2.5rem;
@@ -36,10 +42,51 @@
     color: #ffff00;
   }
    
+  @keyframes arcade-blink {
+    0%, 100% {
+      opacity: 1;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    }
+    50% {
+      opacity: 0.5;
+      text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+    }
+  }
+  
   .arcade-winner {
     font-size: 2rem;
     margin: 20px 0;
     color: #ff00ff; 
     text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    animation: arcade-blink 1s infinite; 
+  }
+
+  .arcade-select {
+    font-size: 1rem;
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #ff00ff;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+  }
+  
+  .arcade-button.small {
+    padding: 5px 10px;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  .player-config {
+    display: flex;
+  }
+
+  .player1 {
+    margin-right: 20px;
+  }
+
+  .player2 {
+    margin-left: 20px;
   }
   
