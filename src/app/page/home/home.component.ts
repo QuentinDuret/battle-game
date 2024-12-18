@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
   updateAnimationDuration(): void {
     const totalScores = this.players.length;
     const baseDuration = 10; 
-    this.animationDuration = baseDuration + (totalScores  * 1.5); 
+    this.animationDuration = baseDuration + (totalScores  * 2.5); 
   }
 
   calculateScrollDistance(): void {

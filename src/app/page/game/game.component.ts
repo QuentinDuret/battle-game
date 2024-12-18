@@ -68,6 +68,7 @@ export class GameComponent implements OnInit {
       })
     ).subscribe((player: PlayerApi) => {
       this.allPlayers.push(player);
+      this.availablePlayers();
      });
   }
   
