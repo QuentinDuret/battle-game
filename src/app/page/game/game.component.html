@@ -1,1 +1,22 @@
-<p>game works!</p>
+<div class="arcade-background"></div>
+
+<div *ngIf="!gameState.winner" class="arcade-game-container">
+
+      <h1 class="arcade-game-title">Tour {{ gameState.currentTurn + 1 }}</h1>
+      <div class="arcade-score">
+        <p>{{ gameState.players[0].name }} : {{ gameState.players[0].score }}</p>
+        <p>{{ gameState.players[1].name }} : {{ gameState.players[1].score }}</p>
+      </div>
+      
+      <div *ngIf="gameState.playedCards.length" class="arcade-played-cards">
+        <p>Cartes jouées : {{ gameState.playedCards[0] }} vs {{ gameState.playedCards[1] }}</p>
+      </div>
+      <button class="arcade-button" (click)="playTurn()">Jouer un tour</button>
+    </div>
+  
+    <div *ngIf="gameState.winner">
+      <h2 class="arcade-winner">Le gagnant est : {{ gameState.winner }}</h2>
+      <button class="arcade-button" (click)="restartGame()">Rejouer</button>
+
+  </div>
+  

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Game } from '../model/game.model';
+import { Game, Score } from '../model/game.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,5 +16,9 @@ export class ApiService {
 
   getGames() {
     return this.http.get<Game[]>(`${this.apiUrl}/games`);
+  }
+
+  postGame(score: Score[]) {
+    return this.http.post<any>(`${this.apiUrl}/games`, score);
   }
 }

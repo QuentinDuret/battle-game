@@ -1,0 +1,45 @@
+.arcade-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #ffff00;
+    text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00; 
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+
+  .arcade-game-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ff00ff; 
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+  }
+  
+  .arcade-score {
+    font-size: 1.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    border: 3px solid #00ffff; 
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #00ffff;
+    margin-bottom: 30px;
+    text-align: center;
+    width: 40%;
+  }
+  
+  .arcade-played-cards {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #ffff00;
+  }
+   
+  .arcade-winner {
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #ff00ff; 
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+  }
+  
